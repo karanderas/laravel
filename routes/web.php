@@ -23,4 +23,10 @@ Route::get('/page/{page?}', function ($page = 'home') {
     return view($page, ['page' => $page]);
 });
 
-Route::get('/wall/{search?}', 'WallController@show');
+Route::get('/wall/{search?}', 'WallController@show')->name('wall');
+
+Route::post('/write', 'WallController@write');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
