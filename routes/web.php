@@ -30,3 +30,6 @@ Route::post('/write', 'WallController@write');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('contact', 'ContactController@getForm');
+Route::post('contact', 'ContactController@postForm');
